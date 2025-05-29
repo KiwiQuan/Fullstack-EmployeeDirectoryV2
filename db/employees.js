@@ -1,4 +1,4 @@
-const employees = [
+export const employees = [
   { id: 1, name: "Carolynn McGinlay" },
   { id: 2, name: "Lodovico Filon" },
   { id: 3, name: "Jefferey Wahlberg" },
@@ -10,5 +10,10 @@ const employees = [
   { id: 9, name: "Verile Bondesen" },
   { id: 10, name: "Gwen Grollmann" },
 ];
-
-export default employees;
+export function addEmployee(employee) {
+  const currentId = employees[employees.length - 1].id;
+  const newEmployee = { id: currentId + 1, name: employee };
+  employees.push(newEmployee);
+  console.log(newEmployee);
+  return newEmployee;
+}
